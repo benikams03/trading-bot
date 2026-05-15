@@ -1,0 +1,28 @@
+# environnement virtuel
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# fichiers de logs
+*.log
+
+# variables d’environnement
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# tests/cache
+.pytest_cache/
+.coverage/
+
+# build / distribution
+dist/
+build/
+*.egg-info/

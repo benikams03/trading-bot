@@ -5,3 +5,28 @@ Bot de trading automatisé basé sur des stratégies algorithmiques et une analy
 ![Language](https://img.shields.io/badge/language-Python-yellow)
 ![Framework](https://img.shields.io/badge/framework-None-lightgrey)
 ![License](https://img.shields.io/badge/license-MIT-green)
+
+# Generetion du fichier requirements.txt
+```bash
+pip freeze > requirements.txt
+```
+
+# Installation
+## Environnement virtuel
+```bash
+py -m venv venv
+```
+
+## Activation de l'environnement virtuel
+```bash
+# Windows
+venv\Scripts\activate
+
+# Linux/Mac
+source venv/bin/activate
+```
+
+## Installation des dépendances
+```bash
+pip install -r requirements.txt
+```
