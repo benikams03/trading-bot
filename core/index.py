@@ -18,13 +18,14 @@ class Core:
         if mt5.login(int(self.username), password=self.password, server=self.server):
             print("--------------------------------")
             print("     MT5 TRADING BOT v1.0")
-            print("--------------------------------", "\n")
+            print("--------------------------------", "")
             print("[SUCCESS] Connecté MT5")
-            print("nom     : ", self.get_account_info().name)
-            print("Solde   : ", self.get_account_info().balance)
-            print("Devise  : ", self.get_account_info().currency, "\n")
-            print("--------------------------------", "\n")
-            return True
+            print("Nom     : ", self.get_account_info().name, "")
+            print("Solde   : ", self.get_account_info().balance, self.get_account_info().currency)
+            print("Symbol  : ", os.getenv("SYMBOL"))
+            print("Lot Size: ", os.getenv("LOT_SIZE"))
+            print("--------------------------------", "")
+            return mt5
         else:
             print("Erreur login", mt5.last_error())
             return False
