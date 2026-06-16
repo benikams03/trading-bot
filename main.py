@@ -1,5 +1,5 @@
 from core.index import Core
-from trade.index import Traide_default
+from trade.strategy import StrategyTrade
 import time
 from analyse.safe import Safe
 import MetaTrader5 as mt5
@@ -12,19 +12,10 @@ try:
         exit(1)
 
     while True:
-        heure = datetime.now().strftime("%H:%M:%S")
-        Traide_default.sell()
-        Traide_default.sell()
-        Traide_default.sell()
-        Traide_default.sell()
-        Traide_default.sell()
+        
+        StrategyTrade().start("BUY", 5)
 
-        print(f'[{heure}] Next check in 10s... ')
-        time.sleep(10)
-        
-        Traide_default.close_all()
-        print('')
-        
+        heure = datetime.now().strftime("%H:%M:%S")
         print(f'[{heure}] ANALYZING MARKET.')
         time.sleep(1)
         print(f'[{heure}] ANALYZING MARKET...')
@@ -35,6 +26,8 @@ try:
         time.sleep(1)
         print(f'[{heure}] ANALYZING MARKET......')
         time.sleep(1)
+
+        Safe(mt5.TIMEFRAME_M1).get_trend()
 
         print('')
 
